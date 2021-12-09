@@ -17,24 +17,25 @@
 package sonic
 
 import (
-	`bytes`
-	`encoding`
-	`encoding/json`
-	`errors`
-	`fmt`
-	`image`
-	`math`
-	`math/big`
-	`math/rand`
-	`net`
-	`reflect`
-	`strconv`
-	`strings`
-	`testing`
-	`time`
-	`unsafe`
+	"bytes"
+	"encoding"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"image"
+	"math"
+	"math/big"
+	"math/rand"
+	"net"
+	"reflect"
+	// "runtime"
+	"strconv"
+	"strings"
+	"testing"
+	"time"
+	"unsafe"
 
-	`github.com/bytedance/sonic/decoder`
+	"github.com/bytedance/sonic/decoder"
 )
 
 type T struct {
@@ -2428,6 +2429,8 @@ func TestUnmarshalMaxDepth(t *testing.T) {
 						t.Errorf("expected error containing 'exceeded max depth', got: %v", err)
 					}
 				}
+				// runtime.GC()
+				// fmt.Printf("%#v\n", v)
 			})
 		}
 	}

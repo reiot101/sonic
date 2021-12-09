@@ -169,7 +169,8 @@ func TestAssembler_OpCode(t *testing.T) {
         src: `hello, world"`,
         exp: "hello, world",
         val: new(string),
-    }, {
+    }, 
+    {
         key: "_OP_str/unquote",
         ins: []_Instr{newInsOp(_OP_str)},
         src: `hello, world \\ \" \/ \b \f \n \r \t \u666f 测试中文 \ud83d\ude00"`,
